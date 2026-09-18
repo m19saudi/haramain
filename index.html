@@ -1,0 +1,1528 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, viewport-fit=cover">
+
+<meta name="theme-color" content="#b99b65">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<title>دليل ضيف الرحمن</title>
+
+<style>
+/* =========================================================
+   HARAMEIN MASTER - SINGLE HTML
+   No external libraries / no dependencies
+   ========================================================= */
+
+:root{
+    --gold:#b99b65;
+    --gold-dark:#947747;
+    --gold-light:#d7c095;
+    --cream:#f8f5ee;
+    --white:#ffffff;
+    --ink:#26332f;
+    --muted:#77746d;
+    --green:#244b43;
+    --green-dark:#173a34;
+    --border:#e6dece;
+    --shadow:0 12px 35px rgba(37,45,42,.10);
+    --radius:22px;
+}
+
+*{
+    box-sizing:border-box;
+    -webkit-tap-highlight-color:transparent;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    margin:0;
+    background:var(--cream);
+    color:var(--ink);
+    font-family:
+        "Tahoma",
+        "Arial",
+        sans-serif;
+    min-height:100vh;
+}
+
+/* =========================
+   TOP HERO
+   ========================= */
+
+.hero{
+    position:relative;
+    min-height:205px;
+    overflow:hidden;
+    background:
+        linear-gradient(
+            180deg,
+            rgba(20,28,26,.20),
+            rgba(20,28,26,.82)
+        ),
+        radial-gradient(
+            circle at 50% 30%,
+            rgba(205,181,133,.38),
+            transparent 25%
+        ),
+        linear-gradient(
+            135deg,
+            #343b38 0%,
+            #1d2926 48%,
+            #111816 100%
+        );
+}
+
+/* Decorative arches */
+.hero:before{
+    content:"";
+    position:absolute;
+    inset:0;
+    opacity:.17;
+    background:
+        repeating-linear-gradient(
+            90deg,
+            transparent 0 35px,
+            rgba(255,255,255,.7) 36px 39px,
+            transparent 40px 74px
+        );
+    mask-image:linear-gradient(to bottom, black, transparent);
+}
+
+.hero-kaaba{
+    position:absolute;
+    width:86px;
+    height:86px;
+    left:50%;
+    top:35px;
+    transform:translateX(-50%);
+    background:#101614;
+    border:4px solid #252b29;
+    box-shadow:0 0 50px rgba(0,0,0,.45);
+}
+
+.hero-kaaba:before{
+    content:"";
+    position:absolute;
+    top:25px;
+    left:0;
+    right:0;
+    height:8px;
+    background:var(--gold);
+    opacity:.75;
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+    padding:
+        30px
+        20px
+        25px;
+    text-align:center;
+    color:white;
+}
+
+.brand-small{
+    font-size:12px;
+    color:#ddc99f;
+    margin-bottom:8px;
+}
+
+.hero h1{
+    margin:70px 0 7px;
+    font-size:25px;
+    font-weight:700;
+}
+
+.hero p{
+    margin:0;
+    font-size:13px;
+    color:#e5e0d5;
+}
+
+/* =========================
+   MAIN APP
+   ========================= */
+
+.app{
+    width:min(100%, 760px);
+    margin:-18px auto 0;
+    position:relative;
+    z-index:5;
+    padding:0 12px 35px;
+}
+
+/* =========================
+   TAB BAR
+   ========================= */
+
+.tabs-wrap{
+    background:white;
+    border:1px solid var(--border);
+    border-radius:24px;
+    box-shadow:var(--shadow);
+    padding:7px;
+}
+
+.tabs{
+    display:flex;
+    gap:6px;
+    overflow-x:auto;
+    scrollbar-width:none;
+    padding:0;
+}
+
+.tabs::-webkit-scrollbar{
+    display:none;
+}
+
+.tab{
+    flex:0 0 auto;
+    min-width:92px;
+    border:0;
+    background:transparent;
+    color:#777064;
+    border-radius:18px;
+    padding:11px 9px;
+    cursor:pointer;
+    font-family:inherit;
+    font-size:11px;
+    transition:.2s ease;
+}
+
+.tab .icon{
+    display:block;
+    font-size:21px;
+    margin-bottom:4px;
+}
+
+.tab.active{
+    background:var(--gold);
+    color:white;
+    box-shadow:0 5px 14px rgba(185,155,101,.28);
+}
+
+/* =========================
+   HOME / DASHBOARD
+   ========================= */
+
+.page{
+    display:none;
+    animation:fade .25s ease;
+}
+
+.page.active{
+    display:block;
+}
+
+@keyframes fade{
+    from{
+        opacity:0;
+        transform:translateY(5px);
+    }
+    to{
+        opacity:1;
+        transform:none;
+    }
+}
+
+.section{
+    margin-top:15px;
+}
+
+.section-title{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin:18px 3px 10px;
+}
+
+.section-title h2{
+    margin:0;
+    font-size:17px;
+}
+
+.section-title span{
+    color:var(--muted);
+    font-size:11px;
+}
+
+/* =========================
+   QUICK CARDS
+   ========================= */
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:10px;
+}
+
+.card{
+    background:white;
+    border:1px solid var(--border);
+    border-radius:18px;
+    padding:15px;
+    box-shadow:0 5px 18px rgba(40,45,40,.045);
+}
+
+.service-card{
+    min-height:145px;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+}
+
+.service-icon{
+    width:45px;
+    height:45px;
+    display:grid;
+    place-items:center;
+    border-radius:14px;
+    background:#f4ecdd;
+    color:var(--gold-dark);
+    font-size:24px;
+}
+
+.card h3{
+    font-size:14px;
+    margin:10px 0 5px;
+}
+
+.card p{
+    color:var(--muted);
+    font-size:11px;
+    line-height:1.7;
+    margin:0;
+}
+
+/* =========================
+   MAIN CTA
+   ========================= */
+
+.primary{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:12px;
+    background:
+        linear-gradient(
+            135deg,
+            var(--green),
+            var(--green-dark)
+        );
+    color:white;
+    border-radius:22px;
+    padding:18px;
+    box-shadow:0 12px 30px rgba(36,75,67,.20);
+}
+
+.primary h2{
+    margin:0 0 5px;
+    font-size:18px;
+}
+
+.primary p{
+    margin:0;
+    font-size:11px;
+    line-height:1.7;
+    color:#dce7e3;
+}
+
+.primary .big-icon{
+    width:60px;
+    height:60px;
+    flex:0 0 60px;
+    display:grid;
+    place-items:center;
+    border:1px solid rgba(255,255,255,.2);
+    border-radius:18px;
+    background:rgba(255,255,255,.08);
+    font-size:30px;
+}
+
+/* =========================
+   BUTTONS
+   ========================= */
+
+.btn{
+    border:0;
+    border-radius:13px;
+    padding:11px 14px;
+    font-family:inherit;
+    font-size:12px;
+    font-weight:bold;
+    cursor:pointer;
+    text-decoration:none;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:6px;
+}
+
+.btn-gold{
+    background:var(--gold);
+    color:white;
+}
+
+.btn-outline{
+    background:white;
+    color:var(--gold-dark);
+    border:1px solid var(--gold-light);
+}
+
+.btn-dark{
+    background:var(--green);
+    color:white;
+}
+
+.full{
+    width:100%;
+}
+
+/* =========================
+   JOURNEY STEPS
+   ========================= */
+
+.journey{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:7px;
+}
+
+.step{
+    background:white;
+    border:1px solid var(--border);
+    border-radius:15px;
+    padding:11px 5px;
+    text-align:center;
+}
+
+.step-number{
+    width:30px;
+    height:30px;
+    margin:auto;
+    display:grid;
+    place-items:center;
+    background:#f1e9da;
+    color:var(--gold-dark);
+    border-radius:50%;
+    font-weight:bold;
+    font-size:12px;
+}
+
+.step strong{
+    display:block;
+    font-size:10px;
+    margin-top:7px;
+}
+
+.step small{
+    color:var(--muted);
+    font-size:8px;
+}
+
+/* =========================
+   DETAIL PAGE
+   ========================= */
+
+.detail{
+    margin-top:15px;
+    background:white;
+    border:1px solid var(--border);
+    border-radius:22px;
+    padding:20px;
+    box-shadow:var(--shadow);
+}
+
+.detail-head{
+    display:flex;
+    align-items:center;
+    gap:13px;
+    padding-bottom:15px;
+    border-bottom:1px solid var(--border);
+}
+
+.detail-icon{
+    width:54px;
+    height:54px;
+    flex:0 0 54px;
+    display:grid;
+    place-items:center;
+    background:#f4ecdd;
+    color:var(--gold-dark);
+    border-radius:17px;
+    font-size:28px;
+}
+
+.detail h2{
+    margin:0 0 5px;
+    font-size:19px;
+}
+
+.detail-sub{
+    margin:0;
+    color:var(--muted);
+    font-size:11px;
+    line-height:1.7;
+}
+
+.info-box{
+    background:#faf8f3;
+    border-right:4px solid var(--gold);
+    border-radius:13px;
+    padding:13px;
+    margin-top:15px;
+    font-size:12px;
+    line-height:1.9;
+}
+
+.actions{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:8px;
+    margin-top:16px;
+}
+
+/* =========================
+   CROWD STATUS
+   ========================= */
+
+.status{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:10px;
+    padding:13px;
+    background:#faf8f3;
+    border-radius:14px;
+    margin-bottom:8px;
+}
+
+.status-name{
+    font-size:12px;
+    font-weight:bold;
+}
+
+.status-pill{
+    padding:5px 9px;
+    border-radius:20px;
+    background:#eee;
+    font-size:10px;
+}
+
+.status-pill.green{
+    background:#dcefe5;
+    color:#286047;
+}
+
+.status-pill.gold{
+    background:#f4ead4;
+    color:#8a6934;
+}
+
+/* =========================
+   CHECKLIST
+   ========================= */
+
+.checklist{
+    margin:0;
+    padding:0;
+    list-style:none;
+}
+
+.checklist li{
+    display:flex;
+    gap:10px;
+    align-items:flex-start;
+    padding:12px 0;
+    border-bottom:1px solid #eee9df;
+    font-size:12px;
+    line-height:1.8;
+}
+
+.check{
+    width:23px;
+    height:23px;
+    flex:0 0 23px;
+    display:grid;
+    place-items:center;
+    border-radius:50%;
+    background:#eee6d6;
+    color:var(--gold-dark);
+    font-size:11px;
+}
+
+/* =========================
+   IFRAME
+   ========================= */
+
+.viewer{
+    margin-top:15px;
+    overflow:hidden;
+    border-radius:18px;
+    border:1px solid var(--border);
+    background:#eee;
+}
+
+.viewer iframe{
+    display:block;
+    width:100%;
+    height:55vh;
+    min-height:430px;
+    border:0;
+}
+
+.iframe-note{
+    padding:11px;
+    background:#fff;
+    color:var(--muted);
+    font-size:10px;
+    line-height:1.7;
+    text-align:center;
+}
+
+/* =========================
+   FOOTER
+   ========================= */
+
+.footer{
+    text-align:center;
+    padding:25px 10px 5px;
+    color:#8a867e;
+    font-size:10px;
+    line-height:1.8;
+}
+
+.footer strong{
+    color:var(--gold-dark);
+}
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+
+@media(max-width:390px){
+    .grid{
+        grid-template-columns:1fr;
+    }
+
+    .journey{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .hero h1{
+        font-size:22px;
+    }
+}
+
+@media(min-width:700px){
+    .hero{
+        min-height:260px;
+    }
+
+    .hero h1{
+        font-size:30px;
+    }
+
+    .grid{
+        grid-template-columns:repeat(3,1fr);
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- =========================================================
+     HERO
+     ========================================================= -->
+
+<header class="hero">
+    <div class="hero-kaaba"></div>
+
+    <div class="hero-content">
+        <div class="brand-small">
+            دليل ضيف الرحمن
+        </div>
+
+        <h1>رحلتك في الحرمين</h1>
+
+        <p>
+            خدمات المطاف والمسعى • دليل العمرة • الخرائط • الخدمات
+        </p>
+    </div>
+</header>
+
+
+<main class="app">
+
+<!-- =========================================================
+     TABS
+     ========================================================= -->
+
+<div class="tabs-wrap">
+
+    <nav class="tabs" id="tabs">
+
+        <button class="tab active" data-page="home">
+            <span class="icon">⌂</span>
+            الرئيسية
+        </button>
+
+        <button class="tab" data-page="tawaf">
+            <span class="icon">🕋</span>
+            المطوف
+        </button>
+
+        <button class="tab" data-page="crowd">
+            <span class="icon">◉</span>
+            الكثافة
+        </button>
+
+        <button class="tab" data-page="musaliyaat">
+            <span class="icon">🕌</span>
+            المصليات
+        </button>
+
+        <button class="tab" data-page="umrah">
+            <span class="icon">📖</span>
+            العمرة
+        </button>
+
+        <button class="tab" data-page="maps">
+            <span class="icon">⌖</span>
+            الخرائط
+        </button>
+
+        <button class="tab" data-page="ibnbaz">
+            <span class="icon">☰</span>
+            ابن باز
+        </button>
+
+    </nav>
+
+</div>
+
+
+<!-- =========================================================
+     HOME
+     ========================================================= -->
+
+<section class="page active" id="home">
+
+    <div class="section">
+
+        <div class="primary">
+
+            <div>
+                <h2>أهلاً بك في دليل ضيف الرحمن</h2>
+                <p>
+                    واجهة واحدة للوصول السريع إلى أهم الخدمات
+                    والمعلومات أثناء رحلتك في الحرمين.
+                </p>
+            </div>
+
+            <div class="big-icon">
+                🕋
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="section">
+
+        <div class="section-title">
+            <h2>رحلة العمرة</h2>
+            <span>خطوات مختصرة</span>
+        </div>
+
+        <div class="journey">
+
+            <div class="step">
+                <div class="step-number">1</div>
+                <strong>الإحرام</strong>
+                <small>الميقات</small>
+            </div>
+
+            <div class="step">
+                <div class="step-number">2</div>
+                <strong>الطواف</strong>
+                <small>حول الكعبة</small>
+            </div>
+
+            <div class="step">
+                <div class="step-number">3</div>
+                <strong>السعي</strong>
+                <small>الصفا والمروة</small>
+            </div>
+
+            <div class="step">
+                <div class="step-number">4</div>
+                <strong>التحلل</strong>
+                <small>حلق أو تقصير</small>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="section">
+
+        <div class="section-title">
+            <h2>الخدمات السريعة</h2>
+            <span>اضغط للوصول</span>
+        </div>
+
+        <div class="grid">
+
+            <div class="card service-card">
+                <div>
+                    <div class="service-icon">🕋</div>
+                    <h3>المطوف الرقمي</h3>
+                    <p>
+                        دليلك أثناء رحلة العمرة والطواف.
+                    </p>
+                </div>
+
+                <button
+                    class="btn btn-gold full"
+                    onclick="openPage('tawaf')">
+                    فتح الخدمة
+                </button>
+            </div>
+
+
+            <div class="card service-card">
+                <div>
+                    <div class="service-icon">◉</div>
+                    <h3>كثافة المطاف والمسعى</h3>
+                    <p>
+                        الاطلاع على حالة المواقع والأدوار.
+                    </p>
+                </div>
+
+                <button
+                    class="btn btn-gold full"
+                    onclick="openPage('crowd')">
+                    عرض الحالة
+                </button>
+            </div>
+
+
+            <div class="card service-card">
+                <div>
+                    <div class="service-icon">🕌</div>
+                    <h3>المصليات</h3>
+                    <p>
+                        الوصول إلى خدمة المصليات.
+                    </p>
+                </div>
+
+                <button
+                    class="btn btn-gold full"
+                    onclick="openPage('musaliyaat')">
+                    فتح الخدمة
+                </button>
+            </div>
+
+
+            <div class="card service-card">
+                <div>
+                    <div class="service-icon">📖</div>
+                    <h3>صفة العمرة</h3>
+                    <p>
+                        دليل مبسط لمراحل أداء العمرة.
+                    </p>
+                </div>
+
+                <button
+                    class="btn btn-gold full"
+                    onclick="openPage('umrah')">
+                    قراءة الدليل
+                </button>
+            </div>
+
+
+            <div class="card service-card">
+                <div>
+                    <div class="service-icon">⌖</div>
+                    <h3>الخريطة التفاعلية</h3>
+                    <p>
+                        استكشاف المرافق والمعالم والخدمات.
+                    </p>
+                </div>
+
+                <button
+                    class="btn btn-gold full"
+                    onclick="openPage('maps')">
+                    فتح الخريطة
+                </button>
+            </div>
+
+
+            <div class="card service-card">
+                <div>
+                    <div class="service-icon">📚</div>
+                    <h3>أعمال مناسك العمرة</h3>
+                    <p>
+                        قراءة المادة العلمية من موقع ابن باز.
+                    </p>
+                </div>
+
+                <button
+                    class="btn btn-gold full"
+                    onclick="openPage('ibnbaz')">
+                    قراءة
+                </button>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     TAWAF
+     ========================================================= -->
+
+<section class="page" id="tawaf">
+
+    <div class="detail">
+
+        <div class="detail-head">
+
+            <div class="detail-icon">🕋</div>
+
+            <div>
+                <h2>المطوف الرقمي</h2>
+                <p class="detail-sub">
+                    دليلك لرحلة العمرة والطواف.
+                </p>
+            </div>
+
+        </div>
+
+        <div class="info-box">
+            يمكنك استخدام الخدمة الرسمية للمطوف الرقمي
+            للتعرف على معلومات الطواف ومواقع الوصول والمسارات
+            داخل المسجد الحرام.
+        </div>
+
+        <div class="actions">
+
+            <a
+                class="btn btn-gold"
+                href="https://alharamain.gov.sa/tawaf/"
+                target="_blank"
+                rel="noopener">
+                فتح الموقع
+            </a>
+
+            <button
+                class="btn btn-outline"
+                onclick="tryEmbed('https://alharamain.gov.sa/tawaf/')">
+                عرض هنا
+            </button>
+
+        </div>
+
+    </div>
+
+    <div id="viewer-tawaf"></div>
+
+</section>
+
+
+<!-- =========================================================
+     CROWD
+     ========================================================= -->
+
+<section class="page" id="crowd">
+
+    <div class="detail">
+
+        <div class="detail-head">
+
+            <div class="detail-icon">◉</div>
+
+            <div>
+                <h2>كثافة المطاف والمسعى</h2>
+                <p class="detail-sub">
+                    متابعة حالة مواقع المطاف والمسعى.
+                </p>
+            </div>
+
+        </div>
+
+        <div class="info-box">
+            الخدمة الرسمية تعرض مستويات ومواقع متعددة للمطاف
+            والمسعى، ومنها سطح المطاف، الدور الأول، الدور الأرضي
+            وصحن المطاف، إضافة إلى أدوار المسعى.
+        </div>
+
+        <div class="status">
+            <span class="status-name">المطاف</span>
+            <span class="status-pill gold">
+                بيانات مباشرة من الخدمة
+            </span>
+        </div>
+
+        <div class="status">
+            <span class="status-name">المسعى</span>
+            <span class="status-pill green">
+                بيانات مباشرة من الخدمة
+            </span>
+        </div>
+
+        <div class="actions">
+
+            <a
+                class="btn btn-gold"
+                href="https://alharamain.gov.sa/public/?module=mataf_say_ar"
+                target="_blank"
+                rel="noopener">
+                فتح الخدمة
+            </a>
+
+            <button
+                class="btn btn-outline"
+                onclick="tryEmbed('https://alharamain.gov.sa/public/?module=mataf_say_ar')">
+                عرض هنا
+            </button>
+
+        </div>
+
+    </div>
+
+    <div id="viewer-crowd"></div>
+
+</section>
+
+
+<!-- =========================================================
+     MUSALIYAAT
+     ========================================================= -->
+
+<section class="page" id="musaliyaat">
+
+    <div class="detail">
+
+        <div class="detail-head">
+
+            <div class="detail-icon">🕌</div>
+
+            <div>
+                <h2>المصليات</h2>
+                <p class="detail-sub">
+                    الوصول إلى خدمة المصليات بالحرمين.
+                </p>
+            </div>
+
+        </div>
+
+        <div class="info-box">
+            هذه الواجهة تعمل كمدخل موحد إلى خدمة المصليات
+            الرسمية، مع إبقاء الموقع الأصلي هو مصدر الخدمة.
+        </div>
+
+        <div class="actions">
+
+            <a
+                class="btn btn-gold"
+                href="https://musaliyaat.alharamain.gov.sa/ar"
+                target="_blank"
+                rel="noopener">
+                فتح المصليات
+            </a>
+
+            <button
+                class="btn btn-outline"
+                onclick="tryEmbed('https://musaliyaat.alharamain.gov.sa/ar')">
+                عرض هنا
+            </button>
+
+        </div>
+
+    </div>
+
+    <div id="viewer-musaliyaat"></div>
+
+</section>
+
+
+<!-- =========================================================
+     UMRAH
+     ========================================================= -->
+
+<section class="page" id="umrah">
+
+    <div class="detail">
+
+        <div class="detail-head">
+
+            <div class="detail-icon">📖</div>
+
+            <div>
+                <h2>صفة العمرة</h2>
+                <p class="detail-sub">
+                    الدليل الرسمي لصفة العمرة.
+                </p>
+            </div>
+
+        </div>
+
+        <div class="info-box">
+
+            <strong>رحلة العمرة باختصار</strong><br><br>
+
+            يبدأ الاستعداد للنسك من الميقات، ثم الإحرام،
+            ثم الطواف حول الكعبة، ثم السعي بين الصفا والمروة،
+            ثم التحلل بالحلق أو التقصير.
+
+            <br><br>
+
+            للحصول على التفاصيل الكاملة، استخدم المصدر الرسمي
+            أدناه.
+
+        </div>
+
+        <ul class="checklist">
+
+            <li>
+                <span class="check">1</span>
+                <span>
+                    الاستعداد والإحرام من الميقات حسب الحال.
+                </span>
+            </li>
+
+            <li>
+                <span class="check">2</span>
+                <span>
+                    أداء الطواف حول الكعبة.
+                </span>
+            </li>
+
+            <li>
+                <span class="check">3</span>
+                <span>
+                    أداء السعي بين الصفا والمروة.
+                </span>
+            </li>
+
+            <li>
+                <span class="check">4</span>
+                <span>
+                    الحلق أو التقصير لإتمام النسك.
+                </span>
+            </li>
+
+        </ul>
+
+        <div class="actions">
+
+            <a
+                class="btn btn-gold"
+                href="https://alharamain.gov.sa/public/?page=umrah-description-ar"
+                target="_blank"
+                rel="noopener">
+                الدليل الرسمي
+            </a>
+
+            <button
+                class="btn btn-outline"
+                onclick="tryEmbed('https://alharamain.gov.sa/public/?page=umrah-description-ar')">
+                عرض هنا
+            </button>
+
+        </div>
+
+    </div>
+
+    <div id="viewer-umrah"></div>
+
+</section>
+
+
+<!-- =========================================================
+     MAPS
+     ========================================================= -->
+
+<section class="page" id="maps">
+
+    <div class="detail">
+
+        <div class="detail-head">
+
+            <div class="detail-icon">⌖</div>
+
+            <div>
+                <h2>الخريطة التفاعلية</h2>
+                <p class="detail-sub">
+                    استكشف المرافق والمعالم والخدمات.
+                </p>
+            </div>
+
+        </div>
+
+        <div class="info-box">
+
+            الخريطة التفاعلية الرسمية مصممة لمساعدة ضيف الرحمن
+            على التنقل داخل الحرمين والوصول إلى المرافق والخدمات.
+            وتضم نقاط اهتمام ومعالم ومسارات وخدمات متعددة.
+
+        </div>
+
+        <div class="grid" style="margin-top:15px">
+
+            <div class="card">
+                <h3>🕋 المسجد الحرام</h3>
+                <p>
+                    استكشاف المعالم والخدمات والمرافق.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>🕌 المسجد النبوي</h3>
+                <p>
+                    استكشاف المعالم والخدمات والمرافق.
+                </p>
+            </div>
+
+        </div>
+
+        <div class="actions">
+
+            <a
+                class="btn btn-gold"
+                href="https://alharamain.gov.sa/public/?page=interactive_maps_ar"
+                target="_blank"
+                rel="noopener">
+                فتح الخريطة
+            </a>
+
+            <button
+                class="btn btn-outline"
+                onclick="tryEmbed('https://alharamain.gov.sa/public/?page=interactive_maps_ar')">
+                عرض هنا
+            </button>
+
+        </div>
+
+    </div>
+
+    <div id="viewer-maps"></div>
+
+</section>
+
+
+<!-- =========================================================
+     IBN BAZ
+     ========================================================= -->
+
+<section class="page" id="ibnbaz">
+
+    <div class="detail">
+
+        <div class="detail-head">
+
+            <div class="detail-icon">📚</div>
+
+            <div>
+                <h2>أعمال مناسك العمرة</h2>
+                <p class="detail-sub">
+                    المادة العلمية من موقع الشيخ ابن باز.
+                </p>
+            </div>
+
+        </div>
+
+        <div class="info-box">
+
+            صفحة علمية تتناول أعمال مناسك العمرة بالتفصيل،
+            ويمكن الرجوع إليها كمصدر إضافي للقراءة والتعلم.
+
+            <br><br>
+
+            <strong>
+                يُرجى الرجوع إلى المصدر نفسه للاطلاع على كامل
+                المادة والسياق العلمي.
+            </strong>
+
+        </div>
+
+        <div class="actions">
+
+            <a
+                class="btn btn-gold"
+                href="https://binbaz.org.sa/articles/196/%D8%A7%D8%B9%D9%85%D8%A7%D9%84-%D9%85%D9%86%D8%A7%D8%B3%D9%83-%D8%A7%D9%84%D8%B9%D9%85%D8%B1%D8%A9"
+                target="_blank"
+                rel="noopener">
+                فتح المقال
+            </a>
+
+            <button
+                class="btn btn-outline"
+                onclick="tryEmbed('https://binbaz.org.sa/articles/196/%D8%A7%D8%B9%D9%85%D8%A7%D9%84-%D9%85%D9%86%D8%A7%D8%B3%D9%83-%D8%A7%D9%84%D8%B9%D9%85%D8%B1%D8%A9')">
+                عرض هنا
+            </button>
+
+        </div>
+
+    </div>
+
+    <div id="viewer-ibnbaz"></div>
+
+</section>
+
+
+<!-- =========================================================
+     FOOTER
+     ========================================================= -->
+
+<footer class="footer">
+
+    <strong>دليل ضيف الرحمن</strong>
+
+    <br>
+
+    واجهة موحدة للوصول إلى الخدمات والمصادر الرسمية.
+
+    <br><br>
+
+    عند فتح خدمة، قد تظهر في الموقع الأصلي بحسب إعدادات
+    المتصفح والسماح بالعرض داخل إطار.
+
+</footer>
+
+</main>
+
+
+<script>
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
+
+const tabs = document.querySelectorAll(".tab");
+const pages = document.querySelectorAll(".page");
+
+function openPage(pageId){
+
+    tabs.forEach(tab=>{
+        tab.classList.toggle(
+            "active",
+            tab.dataset.page === pageId
+        );
+    });
+
+    pages.forEach(page=>{
+        page.classList.toggle(
+            "active",
+            page.id === pageId
+        );
+    });
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+    /*
+       Scroll the selected tab into view on mobile.
+    */
+
+    const selected = document.querySelector(
+        '.tab[data-page="' + pageId + '"]'
+    );
+
+    if(selected){
+        selected.scrollIntoView({
+            behavior:"smooth",
+            inline:"center",
+            block:"nearest"
+        });
+    }
+}
+
+
+tabs.forEach(tab=>{
+
+    tab.addEventListener("click", ()=>{
+
+        openPage(tab.dataset.page);
+
+    });
+
+});
+
+
+/* =========================================================
+   OPTIONAL EMBED VIEWER
+   ========================================================= */
+
+const embedMap = {
+    tawaf: "https://alharamain.gov.sa/tawaf/",
+    crowd: "https://alharamain.gov.sa/public/?module=mataf_say_ar",
+    musaliyaat: "https://musaliyaat.alharamain.gov.sa/ar",
+    umrah: "https://alharamain.gov.sa/public/?page=umrah-description-ar",
+    maps: "https://alharamain.gov.sa/public/?page=interactive_maps_ar",
+    ibnbaz: "https://binbaz.org.sa/articles/196/%D8%A7%D8%B9%D9%85%D8%A7%D9%84-%D9%85%D9%86%D8%A7%D8%B3%D9%83-%D8%A7%D9%84%D8%B9%D9%85%D8%B1%D8%A9"
+};
+
+function tryEmbed(url){
+
+    const page = [...Object.keys(embedMap)]
+        .find(key => embedMap[key] === url);
+
+    if(!page) return;
+
+    const container = document.getElementById(
+        "viewer-" + page
+    );
+
+    if(!container) return;
+
+    /*
+       Clear previous viewer.
+    */
+
+    container.innerHTML = "";
+
+    const viewer = document.createElement("div");
+    viewer.className = "viewer";
+
+    const iframe = document.createElement("iframe");
+
+    iframe.src = url;
+    iframe.loading = "lazy";
+    iframe.referrerPolicy = "strict-origin-when-cross-origin";
+
+    const note = document.createElement("div");
+    note.className = "iframe-note";
+
+    note.innerHTML =
+        "إذا لم تسمح الصفحة بالعرض داخل التطبيق، " +
+        "استخدم زر <strong>فتح الموقع</strong> لفتحها " +
+        "مباشرة في المتصفح.";
+
+    viewer.appendChild(iframe);
+    viewer.appendChild(note);
+
+    container.appendChild(viewer);
+
+    setTimeout(()=>{
+        container.scrollIntoView({
+            behavior:"smooth",
+            block:"start"
+        });
+    },100);
+
+}
+
+
+/* =========================================================
+   SAVE LAST TAB
+   ========================================================= */
+
+try{
+
+    const lastPage = localStorage.getItem(
+        "haramain-last-page"
+    );
+
+    if(lastPage && document.getElementById(lastPage)){
+        // Uncomment if you want the app to remember the last tab.
+        // openPage(lastPage);
+    }
+
+}catch(e){}
+
+
+/* Save selected page */
+
+tabs.forEach(tab=>{
+
+    tab.addEventListener("click", ()=>{
+
+        try{
+            localStorage.setItem(
+                "haramain-last-page",
+                tab.dataset.page
+            );
+        }catch(e){}
+
+    });
+
+});
+
+
+/* =========================================================
+   SWIPE-LIKE MOBILE FRIENDLY BEHAVIOR
+   ========================================================= */
+
+let startX = 0;
+
+document.addEventListener(
+    "touchstart",
+    e=>{
+        startX = e.touches[0].clientX;
+    },
+    {passive:true}
+);
+
+document.addEventListener(
+    "touchend",
+    e=>{
+
+        const endX = e.changedTouches[0].clientX;
+        const diff = endX - startX;
+
+        if(Math.abs(diff) < 80) return;
+
+        const activePage =
+            document.querySelector(".page.active");
+
+        if(!activePage) return;
+
+        const order = [
+            "home",
+            "tawaf",
+            "crowd",
+            "musaliyaat",
+            "umrah",
+            "maps",
+            "ibnbaz"
+        ];
+
+        const current =
+            order.indexOf(activePage.id);
+
+        if(diff < 0 && current < order.length-1){
+
+            openPage(order[current+1]);
+
+        }else if(diff > 0 && current > 0){
+
+            openPage(order[current-1]);
+
+        }
+
+    },
+    {passive:true}
+);
+
+</script>
+
+</body>
+</html>
